@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h3>Profil de {{post.lastname}}</h3>
+
+  </br>
+  <form id= "editClient">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <label for="client">Nom</label>
+        <textarea name="client" id="change" rows="2" cols="100">{{post.lastname}}</textarea>
+        <label for="client">Prénom</label>
+        <textarea name="client" id="change" rows="2" cols="100">{{post.firstname}}</textarea>
+        <label for="client">Télephone portable</label>
+        <textarea name="client" id="change" rows="2" cols="100">{{post.phonePro}}</textarea>
+        <label for="client">Télephone fixe</label>
+        <textarea name="client" id="change" rows="2" cols="100">{{post.phoneHouse}}</textarea>
+        <label for="client">Mail</label>
+        <textarea name="client" id="change" rows="2" cols="100">{{post.email}}</textarea>
+        <label for="client">Notes</label>
+        <textarea name="client" id="change" rows="2" cols="100"></textarea>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+  </form>
+  
+{% endblock %}

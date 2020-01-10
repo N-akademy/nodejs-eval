@@ -1,0 +1,52 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{title}}</h1>
+  <p>Welcome to {{title}}</p>
+  <h2>Tableau des contacts</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Avatar</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Date de création</th>
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <td>{{post.avatar}}</td>
+        <td>{{post.lastName}}</td>
+        <td>{{post.firstName}}</td>
+        <td>{{post.date | date('d/m/Y H:i') }}</td>
+        <td><a href="/clients/{{ post._id }}">Modifier</a></td>
+        <td><a href="/clients/{{ post._id }}">Supprimer</a></td>
+      
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  <br><br><br>
+  <h2>Formulaire d'ajout de clients</h2>
+  <form id= "oneMore">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Nom</span>
+        <input type="text" id="lastname" class="form-control">
+        <span class="input-group-text">Prénom</span>
+        <input type="text" aria-label="firstname" class="form-control">
+        <span class="input-group-text" id="inputGroupFileAddon01">Avatar</span>
+        <input type="text" aria-label="avatar" class="form-control">
+        <span class="input-group-text">Télephone portable</span>
+        <input type="text" aria-label="phonePro" class="form-control">
+        <span class="input-group-text">Télephone fixe</span>
+        <input type="text" aria-label="phoneHouse" class="form-control">
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Ajoutez</button> 
+  </form>
+{% endblock %}
